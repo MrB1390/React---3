@@ -6,7 +6,7 @@ const DisplayTodo = ({ item, index, setTodo, updateList }) => {
   const [editDes, setEditDes] = useState(item.description);
   const[value,setValue] = useState(item.Completed);
   const deleteList = (id) => {
-    setTodo((pval) => pval.filter((index) => index !== id));
+    setTodo((pval) => pval.filter((item) => item.id !== id));
   };
   return (
     <div>
@@ -67,7 +67,7 @@ const DisplayTodo = ({ item, index, setTodo, updateList }) => {
                 <button
                   className="btn btn-danger"
                   onClick={() => {
-                    deleteList(index);
+                    deleteList(item.id);
                   }}
                 >
                   Delete
